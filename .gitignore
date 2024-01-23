@@ -1,0 +1,7 @@
+node_modules
+.DS_store
+.idea
+yarn-error.log
+output
+.babel-cache
+dist
