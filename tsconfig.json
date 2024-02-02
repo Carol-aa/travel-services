@@ -1,11 +1,32 @@
+
 {
   "compilerOptions": {
-    "outDir": "./dist/",
-    "noImplicitAny": true,
-    "module": "es6",
-    "target": "es5",
+    "noImplicitAny": false,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "target": "ESNext",
     "jsx": "react",
+    "lib": [
+      "DOM",
+      "ESNext"
+    ],
+    "experimentalDecorators": true,
+    "downlevelIteration": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
     "allowJs": true,
-    "moduleResolution": "node"
-  }
+    "outDir": "./output",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
+  },
+  "include": [
+    "./src/**/*",
+    "global.types.d.ts",
+    "global.module.d.ts"
+  ]
 }

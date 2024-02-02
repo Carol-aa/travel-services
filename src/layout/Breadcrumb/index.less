@@ -1,0 +1,54 @@
+.ant-breadcrumb {
+    height: 44px;
+    padding: 0 12px;
+    line-height: 44px;
+  }
+  .ant-breadcrumb a{
+    color: @text-subordination-color;
+  }
+  .ant-breadcrumb span:last-of-type .ant-breadcrumb-link{
+    color:@text-color;
+  }
+
+.w-breadcrumb {
+  .ant-breadcrumb-separator{
+    margin:0 4px;
+  }
+  .go-back {
+    margin-right: 12px;
+    color: @primary-color;
+    font-weight: 500;
+    cursor: pointer;
+
+    &+.ant-breadcrumb-separator {
+      display: none;
+    }
+
+    .action {
+      margin-right: 4px;
+    }
+  }
+  .w-breadcrumb-container span:nth-last-child(2){
+    .ant-breadcrumb-separator{
+      display: none;
+    }
+  }
+
+  .pre-data-tips {
+    display: inline-block;
+    margin-left: 8px;
+  }
+
+  .ant-alert {
+    height: 34px;
+    line-height: 34px;
+  }
+
+  .ant-alert i {
+    top: 10px;
+  }
+
+  .ant-alert-warning .ant-alert-icon {
+    color: red;
+  }
+}
