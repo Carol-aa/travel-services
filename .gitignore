@@ -1,7 +1,19 @@
-node_modules
-.DS_store
-.idea
-yarn-error.log
-output
-.babel-cache
-dist
+
+# dependencies
+/node_modules
+/npm-debug.log*
+/yarn-error.log
+
+
+# production
+/dist
+
+# misc
+.DS_Store
+
+# umi
+/src/.umi
+/src/.umi-production
+/src/.umi-test
+/.env.local
+/.vscode

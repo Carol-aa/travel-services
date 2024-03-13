@@ -1,81 +1,93 @@
-# travel-services
-出行服务商管理系统
+# umi-ts-app
+
+[![node](https://img.shields.io/badge/node-%3E%3D10.13.0-brightgreen)](https://mobile.ant.design)
+[![Build With Umi](https://img.shields.io/badge/umi-%5E3.1.3-brightgreen)](https://umijs.org/)
+[![Build With React](https://img.shields.io/badge/react-%5E16.8.0-brightgreen)](https://react.docschina.org/)
+[![Build With antd](https://img.shields.io/badge/antd-%5E4.2.0-brightgreen)](https://ant.design/index-cn)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)]()
+
+技术栈：umi3 + react hooks + dva + typescript + antd
+
+该项目以 [umi](https://umijs.org/zh/)为底层前端框架，以[Ant Design](https://ant.design/index-cn)为 UI 组件库，[Dva](https://dvajs.com/guide/)为项目数据流，[React hooks](https://react.docschina.org/)编写前端业务组件，以[TypeScript](https://www.tslang.cn/) 做为静态类型检查，包含完整的前端工程化实践。
+
+## 主要功能
+- ①　计价配置模块： 用户可以灵活配置乘客和司机的定价，支持对不同产品类型、城市、日期进行起步价、里程费、超公里费等的设置。
+- ②　司机管理模块： 对已审核的司机进行全面管理，包括司机账户的封禁和注销，以及个人信息管理和资格认证审核等功能。
+- ③　司机运营模块： 提供了司机运营、准入、定价管理等功能，帮助商家监控和优化司机的运营情况。
+- ④　订单数据模块： 以司机维度展示近30日订单完单量、拒单数、流水等线性图。
+- ⑤　数据体系： 构建了全面的数据体系，实现对供需数据、司机详情、订单等数据的深度洞察，为商家提供科学依据。
 
 
-# 前端脚手架
+## 目录结构
 
-> 使用dva框架，请求库用axios，组件库用antd4
+    |-- config                                # 项目配置文件
+    |-- mock                                  # 本地模拟数据
+    |-- public                                
+    |   |-- favicon.ico                       # favicon
+    |-- src                                   
+    |   |-- assets                            # 本地静态资源
+    |   |-- components                        # 业务通用组件
+    |   |-- layouts                           # 通用布局
+    |   |-- models                            # 全局 dva model
+    |   |-- services                          # 后台接口服务
+    |   |-- pages                             # 业务页面入口和常用模板
+    |   |-- e2e                               # 集成测试用例
+    |   |-- global.less                       # 全局样式
+    |                           
+    |-- tests                                 # 测试工具
+    |-- .gitignore                            # git忽略文件
+    |-- .editorconfig                         # 编辑器代码风格配置
+    |-- .eslintignore                         # eslint忽略文件
+    |-- .eslintrc                             # eslint规则
+    |-- .prettierignore                       # 代码风格配置忽略文件
+    |-- .prettierrc                           # 代码风格配置文件
+    |-- package.json                          
+    |-- README.md                              
 
-## 开发规范
+## 快速开始
 
-### 目录规范
-- src/index.js   应用入口
-- src/router.js  应用路由
-- src/styles     全局样式，主题配置
-- src/models     全局store
-- src/components 共用组件
-- src/pages      页面级别组件，以及页面内非共用组件
+```javascript
 
-### 文件命名规范
+// 安装项目
+$ git clone https://github.com/hanyueqiang/umi-ts-app.git
 
-- 字母全部小写
-- 不要带空格
-- 用破折号（-）连接单词
-- 库文件可用逗点（.），用于体现版本或从属关系
+$ cd umi-ts-app
 
-### 代码规范
+// 安装依赖
+$ yarn
 
-使用 [airbnb](https://github.com/airbnb/javascript) 规范
+// 运行
+$ yarn start # 访问 http://localhost:8081
 
+// 打包
+$ yarn build
 
-## 开发说明
-
-- 整体使用[dva框架](https://dvajs.com/)，状态管理相关内容请参考官方文档
-- 关于路由
-
-  在组件中跳转路由`this.props.history.push('/foo')`
-
-  在dva effects 中跳转路由
-
-  ```javascript
-  import { routerRedux } from 'dva/router';
-  const { push } from routerRedux;
-  // ...
-  effects: {
-    *save(action, { put }) {
-      yield put(push('/foo'));
-    },
-  }
-  // ...
-  ```
-
-- 关于Code Splitting
-
-  使用[react-router v4](https://reacttraining.com/react-router/web/guides/code-splitting) 中推荐的方案
-
-  ```jsx
-  import loadable from '@loadable/component'
-  import Loading from './components/Loading'
-  // Home 组件会同步加载
-  import Home from './pages/Home'
-  // Detail 组件会按需加载，加载时显示loading组件的内容
-  const Detail = loadable(() => import('./pages/Detail'), {
-    fallback: <Loading />
-  })
-  // ...
-  <Route path='/' exact component={Home} />
-  <Route path='/detail' render={() => <Detail />} />
-  // ...
-  ```
-
-- 关于less和antd主题定制
-  - 在`src/styles/theme.less`中的变量会覆盖antd中原有的变量定义
-  - `src/styles/theme.less`中定义的变量会在编译时通过插件[sass-resources-loader](https://github.com/shakacode/sass-resources-loader)注入到项目中所有less文件头部，所以写less的时候不再需要手动引入主题定义。如果项目中有mixin定义，也可以通过此方式引入
-  - postcss默认配置了`autoprefixer`插件，如需其他插件可以自行修改config文件`src/postcss.config.js`
-  - 全局样式建议定义在`src/styles/index.less`中，或者通过`src/styles/index.less`引入，组件样式建议跟随组件定义
-
-## 使用说明
-开始本地开发
-```bash
-yarn run start
 ```
+更多命令可在[package.json](./package.json)中查看
+
+## 项目预览
+#### 登录
+![login page](/public/login.png)
+#### Table列表
+![table page](/public/table.png)
+
+#### gg_editor
+![table page](/public/gg_editor.png)
+## 支持环境
+
+## Browsers support
+
+| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari-ios/safari-ios_48x48.png" alt="iOS Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>iOS Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/samsung-internet/samsung-internet_48x48.png" alt="Samsung" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Samsung | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_48x48.png" alt="Opera" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Opera |
+| --------- | --------- | --------- | --------- | --------- | --------- | --------- |
+| IE11, Edge| last 2 versions| last 2 versions| last 2 versions| last 2 versions| last 2 versions| last 2 versions
+
+
+## 参与贡献
+
+我们非常欢迎你的贡献，你可以通过以下方式和我一起共建 :smiley:：
+
+- 通过 [Issue](https://github.com/hanyueqiang/umi-ts-app/issues) 报告 bug 或进行咨询。
+- 提交 [Pull Request](https://github.com/hanyueqiang/umi-ts-app/pulls) 改进代码。
+- 微信交流（备注来自`Github`），微信号：han2013555888
+
+

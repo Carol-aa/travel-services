@@ -1,6 +1,0 @@
-node_modules
-.DS_store
-.idea
-output
-webpack
-babel.config.js
