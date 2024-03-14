@@ -20,13 +20,6 @@ export default [
         children: [],
       },
       {
-        title: '司机审核',
-        link: '/list/audit',
-        key: 'audit',
-        icon: '',
-        children: [],
-      },
-      {
         title: '司机准入',
         link: '/list/access',
         key: 'access',
@@ -83,6 +76,7 @@ export default [
         key: 'orderData',
         icon: '',
         children: [],
+        asdefault: false,
       },
     ],
   },

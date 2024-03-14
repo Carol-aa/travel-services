@@ -19,15 +19,27 @@ const MenuContent: FC<BasicLayoutProps> = ({ global }) => {
     const rows = Array.isArray(data) ? data : [];
     return rows.map(row => {
       if (row === undefined) return false;
-      const { title, link = '', key, children, ...restState } = row;
+      const {
+        title,
+        link = '',
+        key,
+        children,
+        asdefault = true,
+        ...restState
+      } = row;
       if (children && children.length > 0) {
         const subMenu = renderMenu(children);
         return (
-          <SubMenu key={key} title={<span>{title}</span>}>
-            {subMenu}
-          </SubMenu>
+          <>
+            {asdefault && (
+              <SubMenu key={key} title={<span>{title}</span>}>
+                {subMenu}
+              </SubMenu>
+            )}
+          </>
         );
       }
+      if (row?.asdefault !== undefined) return;
       return (
         <Item key={key} title={title}>
           <Link to={{ pathname: link, state: { ...restState, key } }}>

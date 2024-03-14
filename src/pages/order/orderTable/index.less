@@ -1,0 +1,358 @@
+.driver_base_management {
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+
+  .ant-table-thead > tr > th {
+    padding: 2px 5px;
+    background: #f5f6f7;
+    color: #7e7e99;
+    height: 2px;
+    border: none;
+    font-size: 12px;
+    font-weight: 400;
+    vertical-align: inherit;
+    overflow-wrap: break-word;
+    text-align: center;
+  }
+
+  .ant-table-tbody > tr > td {
+    position: relative;
+    margin: 20px;
+    padding: 3px 5px;
+    height: 48px;
+    font-family: PingFangSC-Regular;
+    font-size: 13px;
+    color: #545466;
+    text-align: center;
+    border-top: 1px solid #eff0f1;
+    border-bottom: 1px solid #eff0f1;
+    overflow-wrap: break-word;
+  }
+
+  .baseInformation-search {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 24px 15px 20px;
+
+    .search-form {
+      display: flex;
+      align-items: flex-start;
+
+      .ant-row {
+        // display: flex;
+        // flex-flow: row wrap;
+        min-width: 500px;
+      }
+    }
+  }
+
+  .baseInformation-table {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 24px 15px 20px;
+    margin-top: 16px;
+    min-height: 200px;
+
+    .search-form {
+      display: flex;
+      align-items: flex-start;
+
+      .ant-row {
+        min-width: 500px;
+      }
+    }
+  }
+}
+
+.driver_details {
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+
+  .ant-card-head {
+    margin: 10px 10px 0px;
+    min-height: 30px;
+    height: 30px;
+    padding: 0px 5px;
+    border-bottom: 0px solid;
+    border-radius: 3px;
+  }
+
+  .ant-card-head:before {
+    content: '';
+    position: absolute;
+    top: 25px;
+    left: 0px;
+    bottom: auto;
+    height: 14px;
+    width: 4px;
+    border-radius: 0 2px 2px 0;
+    background-color: #545466;
+    transform: translateY(-50%);
+  }
+
+  .ant-card-body {
+    padding: 10px;
+  }
+
+  .ant-card {
+    margin: 0px 0px 10px;
+    border-radius: 5px;
+  }
+
+  .ant-card-head-wrapper {
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    .ant-card-head-title {
+      flex: 0 0 auto;
+    }
+
+    .ant-card-extra {
+      margin: 25px 18px 10px;
+    }
+  }
+
+  .baseInformation-award {
+    .baseInformation-award-search {
+      background-color: #fff;
+      border-radius: 5px;
+      padding: 24px 15px 20px;
+    }
+
+    .driver_lasting-ant-card {
+      width: 100%;
+      border-radius: 5px;
+      box-shadow: 0 4px 6px 0 rgba(25, 26, 29, 0.05);
+
+      &.driver_lasting-ant-card-bordered {
+        border: none;
+      }
+
+      & > .driver_lasting-ant-card-head {
+        position: relative;
+        top: 0;
+        padding: 0;
+        border-bottom: none;
+
+        .driver_lasting-ant-card-head-wrapper {
+          margin-left: 16px;
+          font-family: PingFangSC-Semibold, sans-serif;
+          font-size: 14px;
+          letter-spacing: 0;
+          color: #262626;
+
+          .driver_lasting-ant-card-head-title {
+            padding: 16px 0;
+          }
+        }
+
+        .driver_lasting-ant-card-extra {
+          margin-right: 20px;
+        }
+
+        .hxz_driver_lasting-ant-tabs {
+          margin-left: 16px;
+          font-family: PingFangSC-Semibold, sans-serif;
+          font-size: 14px;
+          letter-spacing: 0;
+          color: #545466;
+        }
+      }
+
+      & > .driver_lasting-ant-card-head::before {
+        position: absolute;
+        top: 50%;
+        width: 4px;
+        height: 14px;
+        background-color: #545466;
+        border-radius: 0 2px 2px 0;
+        content: '';
+        transform: translateY(-50%);
+      }
+
+      & > .driver_lasting-ant-card-body {
+        position: relative;
+        padding: 0 20px;
+
+        .content_options {
+          position: absolute;
+          top: -40px;
+          right: 20px;
+
+          button {
+            height: 30px;
+            padding: 0 16px;
+            font-family: PingFangSC-Medium, sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            color: #fff;
+            background: #54bfa2;
+          }
+        }
+      }
+    }
+
+    .hxz_driver_lasting {
+      display: inline-block;
+
+      &-main {
+        width: 100vw;
+      }
+
+      &-container {
+        display: flex;
+        overflow-x: scroll;
+        margin-bottom: 12px;
+      }
+
+      &-container-item {
+        width: 300px;
+        border: 1px solid #f0f0f0;
+        padding: 8px;
+        background: #fff;
+        margin-left: 12px;
+        flex-shrink: 0;
+        margin-bottom: 12px;
+
+        &:last-child {
+          margin-right: 12px;
+        }
+      }
+
+      &-empty {
+        width: 300px;
+        // border: 1px solid #bbb;
+        padding: 8px;
+        background: #fff;
+        margin-left: 12px;
+
+        .hxz_driver_lasting-ant-empty-description {
+          color: #9fa0a2;
+        }
+      }
+
+      &-status0 {
+        color: red;
+      }
+
+      &-status1 {
+        color: green;
+      }
+
+      &-status2 {
+        color: blue;
+      }
+
+      &-ant-descriptions-header {
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  .ant-table-thead > tr > th {
+    padding: 2px 5px;
+    background: #f5f6f7;
+    color: #7e7e99;
+    height: 2px;
+    border: none;
+    font-size: 12px;
+    font-weight: 400;
+    vertical-align: inherit;
+    overflow-wrap: break-word;
+    text-align: center;
+  }
+
+  .ant-table-tbody > tr > td {
+    position: relative;
+    margin: 20px;
+    padding: 3px 5px;
+    height: 48px;
+    font-family: PingFangSC-Regular;
+    font-size: 13px;
+    color: #545466;
+    text-align: center;
+    border-top: 1px solid #eff0f1;
+    border-bottom: 1px solid #eff0f1;
+    overflow-wrap: break-word;
+  }
+
+  .ant-tabs-nav-wrap {
+    background-color: #fff;
+    border-radius: 5px;
+  }
+
+  .top-tab {
+    border-radius: 5px;
+
+    .baseInformation-List {
+      .ant-card-head:before {
+        content: '';
+        background-color: #fff;
+      }
+
+      .ant-card-body {
+        padding: 0px;
+        text-align: center;
+      }
+
+      .baseData-item {
+        font-size: 35px;
+        font-weight: 700;
+      }
+
+      .ant-card {
+        margin: 0px 0px 10px;
+        border-radius: 5px;
+        box-shadow: 5px 5px 5px #bcbcbd;
+      }
+    }
+
+    .baseInformation-thirty {
+      .ant-card-head-wrapper {
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        .ant-card-head-title {
+          flex: 1 1;
+        }
+
+        .ant-card-extra {
+          margin: 25px 18px 10px;
+
+          .ant-select-selector {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .ant-tabs-tab {
+      color: #7d7d7f;
+      padding: 15px 20px;
+      font-size: 14px;
+      margin: 5px;
+    }
+
+    .ant-tabs-tab-active,
+    .ant-tabs-tab:hover {
+      color: @primary-color;
+    }
+
+    .ant-tabs-ink-bar {
+      background-color: @primary-color;
+      min-width: 100px;
+      opacity: 0.8;
+    }
+
+    .ant-tabs-extra-content {
+      position: absolute;
+      top: 10px;
+      right: 0;
+      z-index: 1;
+    }
+  }
+}
