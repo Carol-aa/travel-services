@@ -1,12 +1,13 @@
 import { Effect, Reducer, history } from 'umi';
 import { message } from 'antd';
-import { queryCard } from '@/services/pricing';
+import { queryCard, searchPrice } from '@/services/pricing';
 
 import { ConnectState } from './connect';
 
 export interface PricingState {
   data: DataProps[];
   cardSource: any;
+  priceData: any[];
 }
 
 interface DataProps {
@@ -19,6 +20,7 @@ export interface DashboardType {
   state: PricingState;
   effects: {
     queryCard: Effect;
+    searchPrice: Effect;
   };
   reducers: {
     save: Reducer<PricingState>;
@@ -38,6 +40,15 @@ const DashboardModel: DashboardType = {
         type: 'save',
         payload: {
           cardSource: response.data,
+        },
+      });
+    },
+    *searchPrice(_, { call, put }) {
+      const response = yield call(searchPrice);
+      yield put({
+        type: 'save',
+        payload: {
+          priceData: response.data,
         },
       });
     },
