@@ -8,25 +8,49 @@ export default {
         status: 'ok',
         data: [
           {
-            id: 1,
-            name: 'TradeCode 6751',
-            desc: '是否是是范围发生的发史蒂夫',
-            callNo: '248万',
-            status: 1,
+            driver_id: 232, //司机Id
+            driver_phone: '123456', //司机手机号
+            driver_name: 'zhang',
+            city_id: '1', //运营城市
+            car_status: '2024-02-17', //司机出车状态
+            License: '蒙A', //车牌号
+            registration_time: '2024-02-17', //注册时间
           },
           {
-            id: 2,
-            name: '去玩儿通天塔',
-            desc: 'sdfsfsgeggg颠覆',
-            callNo: '28万',
-            status: 0,
+            driver_id: 3232, //司机Id
+            driver_phone: '123456', //司机手机号
+            driver_name: 'zhang',
+            city_id: '1', //运营城市
+            car_status: '2024-02-17', //司机出车状态
+            License: '蒙A', //车牌号
+            registration_time: '2024-02-17', //注册时间
           },
           {
-            id: 3,
-            name: 'dsfsdf史蒂夫',
-            desc: '是发史蒂夫',
-            callNo: '8万',
-            status: 1,
+            driver_id: 7887, //司机Id
+            driver_phone: '123456', //司机手机号
+            driver_name: 'zhang',
+            city_id: '1', //运营城市
+            car_status: '2024-02-17', //司机出车状态
+            License: '蒙A', //车牌号
+            registration_time: '2024-02-17', //注册时间
+          },
+          {
+            driver_id: 12354, //司机Id
+            driver_phone: '123456', //司机手机号
+            driver_name: 'zhang',
+            city_id: '1', //运营城市
+            car_status: '2024-02-17', //司机出车状态
+            License: '蒙A', //车牌号
+            registration_time: '2024-02-17', //注册时间
+          },
+          {
+            driver_id: 21123, //司机Id
+            driver_phone: '123456', //司机手机号
+            driver_name: 'zhang',
+            city_id: '1', //运营城市
+            car_status: '2024-02-17', //司机出车状态
+            License: '蒙A', //车牌号
+            registration_time: '2024-02-17', //注册时间
           },
         ],
       });
